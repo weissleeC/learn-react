@@ -1,0 +1,7 @@
+nav .active{
+    color:red;
+}
+
+nav .selected{
+    color:#00a4ff;
+}
