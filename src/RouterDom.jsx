@@ -5,7 +5,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import Test from './pages/Test';
-import QueryStringDemo from './pages/QueryStringDemo'
+import QueryStringDemo from './pages/QueryStringDemo';
+import Shop from './pages/Shop'
 
 import './style/nav.css'
 
@@ -38,6 +39,7 @@ export default class RouterDom extends React.Component {
               state: { flag: 'flag' }  // URL 隐形传递自定义参数
             }}>Contact</NavLink></li>
             <li><NavLink exact to="/hello-demo">重定向</NavLink></li>
+            <li><NavLink exact to="/shop">判断状态重定向</NavLink></li>
           </ul>
         </nav>
         <Switch>
@@ -51,6 +53,7 @@ export default class RouterDom extends React.Component {
           <Route strict exact path="/test/ucenter/:id?/:name?" render={ (props) => ( <Test {...props} name="lee" /> ) }></Route>
           <Route strict exact path="/demo" render={ () => <div>hello demo</div> }></Route>
           <Route strict exact path="/querystringdemo" component={ QueryStringDemo } ></Route>
+          <Route path="/shop" component={ Shop }></Route>
           <Route component={ NotFound }></Route>
         </Switch>
       </Router>
