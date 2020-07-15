@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink, Switch, Redirect } from "react-router-dom";
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -10,7 +10,7 @@ import QueryStringDemo from './pages/QueryStringDemo'
 import './style/nav.css'
 
 /**
- * 在但页面应用中使用 Router 只是在 body 下渲染组件，并不是重新跳转页面渲染
+ * 页面中使用 Router 只是在 body 下渲染组件，并不是重新跳转页面渲染
  * 
  * Switch: 只匹配一个路径
  * 
@@ -31,10 +31,19 @@ export default class RouterDom extends React.Component {
             <li><NavLink exact to="/test/ucenter/1005/lee">URL 传参</NavLink></li>
             <li><NavLink exact to="/querystringdemo?id=1001&name=lee">QueryStringDemo</NavLink></li>
             <li><NavLink exact to="/about" activeStyle={{ color:'green', fontWeight:'bold' }}>About</NavLink></li>
-            <li><NavLink exact to="/about/contact">Contact</NavLink></li>
+            <li><NavLink exact to={{
+              pathname: '/about/contact',   // 设置路由
+              search: '?sort=name',
+              hash: '#the-hash',
+              state: { flag: 'flag' }  // URL 隐形传递自定义参数
+            }}>Contact</NavLink></li>
+            <li><NavLink exact to="/hello-demo">重定向</NavLink></li>
           </ul>
         </nav>
         <Switch>
+          {/* 使用 Redirect 重定向 */}
+          <Redirect from="/hello-demo" to="/demo"></Redirect>
+          
           <Route strict exact path="/" component={ Home }></Route>
           <Route strict exact path="/about" component={ About }></Route>
           <Route strict exact path="/about/contact" component={ Contact }></Route>
