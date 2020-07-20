@@ -39,6 +39,8 @@ export default class RouterDom extends React.Component {
               state: { flag: 'flag' }  // URL 隐形传递自定义参数
             }}>Contact</NavLink></li>
             <li><NavLink exact to="/hello-demo">重定向</NavLink></li>
+
+            {/* Redirect 判断重定向，判断某个值，跳转指定页面 */}
             <li><NavLink exact to="/shop">判断状态重定向</NavLink></li>
           </ul>
         </nav>
