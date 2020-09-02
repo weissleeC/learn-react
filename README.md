@@ -102,7 +102,7 @@
 > 组件更新有两种方式: `setState forceUpdate`、组件会随父组件的更新而更新
 
 - version React 16 +
-<img src="./src/img/LifeCycle.png" width="1254" height="946" />
+<img src="./src/img/LifeCycle.png" width="627" height="473" />
 
 - version React 17 + 
-<img src="./src/img/newLifeCycle.png" width="1438" height="990" />
+<img src="./src/img/newLifeCycle.png" width="719" height="495" />
