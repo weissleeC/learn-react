@@ -106,3 +106,13 @@
 
 - version React 17 + 
 <img src="./src/img/newLifeCycle.png" width="719" height="495" />
+
+### 十一、Redux
+> Redux 是 Javascript 状态容器管理，提供可预测的状态管理，用于数据管理
+
+- 什么场景需要 redux？ 多交互、多数据源
+  + 用户的使用方式复杂
+  + 不同身份的用户有不同的使用方式（比如普通用户和管理员）
+  + 多个用户之间可以协作
+  + 与服务器大量交互，或者使用了 WebSocket
+  + View 要从多个来源获取数据
