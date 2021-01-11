@@ -12,7 +12,8 @@ import './style/index.css'
 // import LifeCycleNew from './LifeCycleNew'
 // import InfiniteDemo from './InfiniteDemo';
 // import HookUseState from './HookUseState';
-import HookUseEffect from './HookUseEffect';
+// import HookUseEffect from './HookUseEffect';
+import HookUseRef from './HookUseRef';
 
 export default function App(){
   return(
@@ -23,7 +24,7 @@ export default function App(){
       <hr/> */}
       {/* <ReduxDOM /> */}
 
-      <HookUseEffect />
+      <HookUseRef />
     </Fragment>
   )
 }
