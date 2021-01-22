@@ -13,7 +13,8 @@ import './style/index.css'
 // import InfiniteDemo from './InfiniteDemo';
 // import HookUseState from './HookUseState';
 // import HookUseEffect from './HookUseEffect';
-import HookUseRef from './HookUseRef';
+// import HookUseRef from './HookUseRef';
+import ECSMScript from './ECSMScript';
 
 export default function App(){
   return(
@@ -24,7 +25,7 @@ export default function App(){
       <hr/> */}
       {/* <ReduxDOM /> */}
 
-      <HookUseRef />
+      <ECSMScript />
     </Fragment>
   )
 }
