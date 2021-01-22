@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 
+import { Title } from './style/css';
+
 const ECSMScript = () => {
 
   useEffect(() => {
@@ -30,6 +32,8 @@ const ECSMScript = () => {
       <input type="button" value="a" />
       <input type="button" value="b" />
       <input type="button" value="c" />
+
+      <Title test>111</Title>
     </div>
   )
 };
