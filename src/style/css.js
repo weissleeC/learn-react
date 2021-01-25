@@ -7,6 +7,11 @@ const Title = styled.h1`
   ${props => { console.log(props) }}
 `;
 
+const Flex = styled.div`
+  display: flex;
+`;
+
 export {
-  Title
+  Title,
+  Flex
 }
