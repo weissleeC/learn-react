@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.production.min.js"></script>
+
+  <script src="./mock/news.js"></script>
+  <script type="text/babel">
+    const newsData = news["RECORDS"];
+
+    class FirstDemo extends React.Component{
+      constructor(...args) {
+        super(...args)
+      }
+
+      render() {
+        return (
+          <table className="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">标题</th>
+                <th scope="col">时间</th>
+                <th scope="col">来源</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                newsData.map(newsItem => (
+                  <tr key={newsItem.ID}>
+                    <th>{newsItem.ID}</th>
+                    <td>{newsItem.title}</td>
+                    <td>{newsItem.time}</td>
+                    <td>{newsItem.channel}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        );
+      };
+    };
+
+    ReactDOM.render(<FirstDemo />, document.getElementById("root"));
+  </script>
+</body>
+</html>
