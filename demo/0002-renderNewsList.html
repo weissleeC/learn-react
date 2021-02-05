@@ -17,10 +17,30 @@
   <script type="text/babel">
     const newsData = news["RECORDS"];
 
+    const channel = {
+      'index': '首页新闻',
+      'guonei': '国内新闻',
+      'war': '军事新闻',
+      'guoji': '国际新闻',
+    }
+
     class FirstDemo extends React.Component{
       constructor(...args) {
         super(...args)
-      }
+      };
+
+      getDate(t) {
+        function toDou(n){
+          return n>=10 ? n : `0`+n;
+        };
+
+        let oDate = new Date(t*1000);
+
+        return (
+          oDate.getFullYear() + '-' + toDou(oDate.getMonth()+1) + '-' + toDou(oDate.getDay()) + ' ' 
+          + toDou(oDate.getHours())  + ':' + toDou(oDate.getMinutes()) + ':' + toDou(oDate.getSeconds())
+        );
+      };
 
       render() {
         return (
@@ -39,8 +59,8 @@
                   <tr key={newsItem.ID}>
                     <th>{newsItem.ID}</th>
                     <td>{newsItem.title}</td>
-                    <td>{newsItem.time}</td>
-                    <td>{newsItem.channel}</td>
+                    <td>{this.getDate(newsItem.time)}</td>
+                    <td>{channel[newsItem.channel]}</td>
                   </tr>
                 ))
               }
