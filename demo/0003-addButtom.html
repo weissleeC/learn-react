@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.production.min.js"></script>
+
+  <script type="text/babel">
+    class FirstDemo extends React.Component{
+      constructor(...args) {
+        super(...args)
+
+        this.state = {
+          a: 1
+        };
+
+        this.fn = this.fn.bind(this);
+      };
+
+      fn() {
+        this.setState({
+          a: this.state.a + 1
+        });
+        console.log(this.props.a)
+      }
+
+      render() {
+        return (
+          <div>
+            <button type="button" className="btn btn-primary" onClick={this.fn}>添加</button>
+            <h2 className="text-start">{this.state.a}</h2>
+          </div>
+        );
+      };
+    };
+
+    ReactDOM.render(<FirstDemo a="11" />, document.getElementById("root"));
+  </script>
+</body>
+</html>
