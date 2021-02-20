@@ -16,27 +16,36 @@
   <script type="text/babel">
     class FirstDemo extends React.Component{
       constructor(...args) {
-        super(...args)
+        super(...args);
 
         this.state = {
           a: 1
         };
 
-        this.fn = this.fn.bind(this);
+        console.log('constructor');
+      };
+
+      componentDidMount() {
+        console.log('组件加载完毕');
+      };
+
+      componentDidUpdate() {
+        console.log('组件更新完毕');
       };
 
       fn() {
         this.setState({
           a: this.state.a + 1
-        });
-      }
+        })
+      };
 
       render() {
         return (
           <div>
-            <button type="button" className="btn btn-primary" onClick={this.fn}>添加</button>
-            <h2 className="text-start">{this.state.a}</h2>
-          </div>
+            <h2>生命周期</h2>
+            <p>{this.state.a}</p>
+            <button onClick={this.fn.bind(this)}>更新</button>
+          </div>  
         );
       };
     };

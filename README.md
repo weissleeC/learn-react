@@ -101,6 +101,8 @@
 > 一个组件会经 **创新、更新、删除** 的过程。
 > 组件更新有两种方式: `setState forceUpdate`、组件会随父组件的更新而更新
 
+
+
 - version React 16 +
 <img src="./src/img/LifeCycle.png" width="627" height="473" />
 
