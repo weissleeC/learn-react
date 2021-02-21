@@ -101,15 +101,68 @@
 > 一个组件会经 **创新、更新、删除** 的过程。
 > 组件更新有两种方式: `setState forceUpdate`、组件会随父组件的更新而更新
 
-
-
 - version React 16 +
 <img src="./src/img/LifeCycle.png" width="627" height="473" />
 
 - version React 17 + 
 <img src="./src/img/newLifeCycle.png" width="719" height="495" />
 
-### 十一、Redux
+
+### 十一、组件的引用、通信
+> 在组件通信之间，尽量保证在自身组件上去修改状态和数据，这样可以避免组件之间的依赖。解决方式是：自身提供一个方法。
+组件之间简单的引用可以通过 ref 使用，但更复杂的通信则必须依赖如 redux 这种大型的框架辅助。
+
+- 父组件调用自组件
+> 使用 ref 的方式调用
+
+```javascript
+class Parent extends React.Component{
+  constructor(...args) {
+    super(...args);
+  };
+
+  fn() {
+    this.refs.child.add(this.refs.input.value);
+  };
+
+  render() {
+    return (
+      <div>
+        <h2>父组件</h2>
+        <input type="text" ref="input" />
+        <button onClick={this.fn.bind(this)}>add</button>
+        <hr />
+        <Child ref="child" /> 
+      </div> 
+    );
+  };
+};
+
+class Child extends React.Component{
+  constructor(...args) {
+    super(...args);
+
+    this.state = {
+      a: 0
+    }
+  };
+
+  add(n) {
+    this.setState({
+      a: this.state.a + parseInt(n)
+    })
+  }
+
+  render() {
+    return (
+      <h2>子组件：{this.state.a}</h2>
+    )
+  }
+}
+```
+
+
+### 十二、Redux
 > Redux 是 Javascript 状态容器管理，提供可预测的状态管理，用于数据管理
 
 - 什么场景需要 redux？ 多交互、多数据源

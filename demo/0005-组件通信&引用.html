@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.production.min.js"></script>
+
+  <script type="text/babel">
+    class Parent extends React.Component{
+      constructor(...args) {
+        super(...args);
+      };
+
+      fn() {
+        this.refs.child.add(this.refs.input.value);
+      };
+
+      render() {
+        return (
+          <div>
+            <h2>父组件</h2>
+            <input type="text" ref="input" />
+            <button onClick={this.fn.bind(this)}>add</button>
+            <hr />
+            <Child ref="child" /> 
+          </div> 
+        );
+      };
+    };
+
+    class Child extends React.Component{
+      constructor(...args) {
+        super(...args);
+
+        this.state = {
+          a: 0
+        }
+      };
+
+      add(n) {
+        this.setState({
+          a: this.state.a + parseInt(n)
+        })
+      }
+
+      render() {
+        return (
+          <h2>子组件：{this.state.a}</h2>
+        )
+      }
+    }
+
+    ReactDOM.render(<Parent />, document.getElementById("root"));
+  </script>
+</body>
+</html>
