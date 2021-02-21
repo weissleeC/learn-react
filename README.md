@@ -108,11 +108,11 @@
 <img src="./src/img/newLifeCycle.png" width="719" height="495" />
 
 
-### 十一、组件的引用、通信
+### 十一、组件的引用&通信
 > 在组件通信之间，尽量保证在自身组件上去修改状态和数据，这样可以避免组件之间的依赖。解决方式是：自身提供一个方法。
 组件之间简单的引用可以通过 ref 使用，但更复杂的通信则必须依赖如 redux 这种大型的框架辅助。
 
-- 父组件调用自组件
+- 父组件调用子组件
 > 使用 ref 的方式调用
 
 ```javascript
@@ -160,6 +160,58 @@ class Child extends React.Component{
   }
 }
 ```
+ 
+ - 子组件调用父组件
+ > 通过  props 的方式接受父组件的 this 处理
+
+ ```javascript
+class Parent extends React.Component{
+  constructor(...args) {
+    super(...args);
+
+    this.state = {
+      a: 0
+    }
+  };
+
+  add(n) {
+    this.setState({
+      a: this.state.a + parseInt(n)
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>父组件：{this.state.a}</h2>
+        <hr />
+        <Child parent={this} /> 
+      </div> 
+    );
+  };
+};
+
+class Child extends React.Component{
+  constructor(...args) {
+    super(...args);
+  };
+
+  fn() {
+    let parent = this.props.parent;
+    parent.add(this.refs.input.value);
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>子组件</h2>
+        <input type="text" ref="input" />
+        <button onClick={this.fn.bind(this)}>add</button>
+      </div>
+    )
+  }
+};
+ ```
 
 
 ### 十二、Redux
@@ -171,3 +223,9 @@ class Child extends React.Component{
   + 多个用户之间可以协作
   + 与服务器大量交互，或者使用了 WebSocket
   + View 要从多个来源获取数据
+
+
+<hr />
+
+## Reaact + webpack
+
