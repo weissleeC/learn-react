@@ -227,5 +227,5 @@ class Child extends React.Component{
 
 <hr />
 
-## Reaact + webpack
+# React + webpack
 
