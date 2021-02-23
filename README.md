@@ -162,7 +162,7 @@ class Child extends React.Component{
 ```
  
  - 子组件调用父组件
- > 通过  props 的方式接受父组件的 this 处理
+ > 通过 props 的方式接受父组件的 this 处理
 
  ```javascript
 class Parent extends React.Component{
@@ -227,5 +227,5 @@ class Child extends React.Component{
 
 <hr />
 
-## Reaact + webpack
+# React + webpack
 
