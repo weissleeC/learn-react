@@ -266,20 +266,29 @@ class Child extends React.Component{
 #### 目录介绍
 
 ```
-  |──public/                                 
+  |──config/
+  |     |──base.js                 * 开发配置                                 
   |     |
-  |     |__index.html              * 模版文件，引用官网公共资源
+  |     |──dev.js                  * 开发模式
+  |     |
+  |     |──prod.js                 * 生产环境
+  |     |
+  |     |__test.js                 * 测试环境
   |
   |
-  |__src/
-      |
-      |──components/               * 公共组件
-      |
-      |──containers/               * 容器组件
-      |
-      |──mock/                     * 数据模拟
-      |
-      |──pages/                    * 页面文件
-      |
-      |__styles                    * 公共样式
+  |──public/                       * 公共资源
+  |
+  |──src/                          * 核心文件
+  |     |
+  |     |__assets/                 * 固定资源
+  |
+  |──tests/                        * 测试文件
+  |
+  |__webpack.config.js             * webpack 配置
+
 ```
+
+### 三、eslint 配置
+> 在 `webpack.config.js` 的 `module` 中配置好 eslint 的相关 loader 之后，还需要初始化 eslint 的配置
+
+在根目录下终端输入命令 `node node_modules/eslint/bin/eslint --init`，输入成功之后根据需求选择。
