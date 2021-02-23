@@ -229,3 +229,57 @@ class Child extends React.Component{
 
 # React + webpack
 
+> 搭建一个 react 的脚手架项目
+
+### 一、安装依赖
+
+- 环境搭建
+  1. `npm init -y` 初始化项目
+  2. `npm i webpack webpack-cli -D` 安装 webpack 核心
+  3. `npm i webpack-dev-server -D` 安装开发环境
+
+- css 编译
+  1. `npm i css-loader style-loader -D` 解析 css 语法
+  2. `npm i postcss-loader autoprefixer -D`
+  3. `npm i less less-loader -D` 解析预编译 css 语法
+  4. `npm i stylelint stylelint-webpack-plugin stylelint-config-standard -D` css 语法检测
+
+- js 和 jsx
+  1. `npm i babel-loader @babel/core @babel/preset-env -D` 编译 ES 语法
+  2. `npm i @babel/preset-react -D` 编译 react 相关内容
+  3. `npm i eslint eslint-loader eslint-plugin-react -D` js&jsx 语法检测
+
+- 单元测试
+  1. `npm i jest jest-webpack -D`
+
+- 资源文件
+  1. `npm i file-loader url-loader -D` 文件资源编译
+  2. `npm i html-webpack-plugin -D` html 编译
+
+### 二、文件创建
+
+1. 创建 **config** 文件夹用于 webpack 各项环境配置
+2. 创建 **public** 文件夹用于一些公共文件存放
+3. 创建 **src** 文件用于核心代码存放
+4. 在根目录下创建 **webpack** 配置文件 `webpack.config.js`
+
+#### 目录介绍
+
+```
+  |──public/                                 
+  |     |
+  |     |__index.html              * 模版文件，引用官网公共资源
+  |
+  |
+  |__src/
+      |
+      |──components/               * 公共组件
+      |
+      |──containers/               * 容器组件
+      |
+      |──mock/                     * 数据模拟
+      |
+      |──pages/                    * 页面文件
+      |
+      |__styles                    * 公共样式
+```
