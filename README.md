@@ -290,5 +290,53 @@ class Child extends React.Component{
 
 ### 三、eslint 配置
 > 在 `webpack.config.js` 的 `module` 中配置好 eslint 的相关 loader 之后，还需要初始化 eslint 的配置
+> 在根目录下终端输入命令 `node node_modules/eslint/bin/eslint --init`，输入成功之后根据需求选择。
 
-在根目录下终端输入命令 `node node_modules/eslint/bin/eslint --init`，输入成功之后根据需求选择。
+```javascript
+// js&jsx
+{test: /\.jsx?$/i, exclude: /node_modules/, use: [
+  // babel
+  {
+    loader: "eslint-loader",
+    options: {
+      presets: ["@bable/preset-react"]
+    }
+  },
+
+  // eslint
+  ...[
+    {
+      loader: "eslint-loader",
+      options: {
+        putputReport: { // 生成错误报告
+          filePath: "eslint.html", // 生成报告的文件名
+          formatter: require("eslint/lib/formatters/html") // 生成报告的格式
+        }
+      }
+    }
+  ]
+]},
+```
+
+### 四、css loader 配置
+> 在 `webpack.config.js` 配置好 css loader 之后，如果添加了自动补充前缀，则需要在 `package.json` 下添加版本兼容
+
+```javascript
+// webpack.config.js css-loader 配置
+// css
+{test: /\.css$/i, use: ["style-loader", "css-loader", {
+  loader: "postcss-loader", // 自动添加前缀
+  options: {
+    plugins: [
+      require("autoprefixer")
+    ]
+  }
+}]},
+
+// package.json 版本兼容处理
+"browserslist": [
+  ">0.5%",
+  "last 2 version",
+  "not dead"
+]
+```
