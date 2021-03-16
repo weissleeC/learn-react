@@ -224,6 +224,19 @@ class Child extends React.Component{
   + 与服务器大量交互，或者使用了 WebSocket
   + View 要从多个来源获取数据
 
+### 十二、React-router
+reuter 的作用：通过不同的地址，展示不同组件，简单化页面应用的编写
+
+> 安装 `npm i react-router-dom -D`
+
+react-router 相关的有四大组件：
+- react-router：核心库
+- react-router：react-router 的 DOM 绑定
+- react-router-native
+- react-router-config: 静态配置辅助库
+
+router 
+
 
 <hr />
 
