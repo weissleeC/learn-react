@@ -6,7 +6,7 @@ import './style/index.css'
 // import AntdButon from './AntdButton'
 // import FetchDOM from './FetchDOM';
 // import MapNode from './MapNode';
-// import RouterDom from './RouterDom';
+ import RouterDom from './RouterDom';
 // import ReduxDOM from './ReduxDOM';
 // import LifeCycle from './LifeCycle';
 // import LifeCycleNew from './LifeCycleNew'
@@ -14,7 +14,7 @@ import './style/index.css'
 // import HookUseState from './HookUseState';
 // import HookUseEffect from './HookUseEffect';
 // import HookUseRef from './HookUseRef';
-import ECSMScript from './ECSMScript';
+// import ECSMScript from './ECSMScript';
 
 export default function App(){
   return(
@@ -25,7 +25,7 @@ export default function App(){
       <hr/> */}
       {/* <ReduxDOM /> */}
 
-      <ECSMScript />
+      <RouterDom />
     </Fragment>
   )
 }
