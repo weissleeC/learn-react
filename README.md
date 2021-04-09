@@ -215,14 +215,16 @@ class Child extends React.Component{
 
 
 ### 十二、Redux
-> Redux 是 Javascript 状态容器管理，提供可预测的状态管理，用于数据管理
+> Redux 是 Javascript 状态容器管理，提供可预测的状态管理，用于数据管理。
 
-- 什么场景需要 redux？ 多交互、多数据源
-  + 用户的使用方式复杂
-  + 不同身份的用户有不同的使用方式（比如普通用户和管理员）
-  + 多个用户之间可以协作
-  + 与服务器大量交互，或者使用了 WebSocket
-  + View 要从多个来源获取数据
+  - 什么场景需要 redux？ 多交互、多数据源
+    + 用户的使用方式复杂
+    + 不同身份的用户有不同的使用方式（比如普通用户和管理员）
+    + 多个用户之间可以协作
+    + 与服务器大量交互，或者使用了 WebSocket
+    + View 要从多个来源获取数据
+    + 可独立使用，但大部分时间都是和 react 一起使用。
+    + 单向数据流，简单，易于调试。
 
 ### 十二、React-router
 reuter 的作用：通过不同的地址，展示不同组件，简单化页面应用的编写
@@ -234,9 +236,6 @@ react-router 相关的有四大组件：
 - react-router：react-router 的 DOM 绑定
 - react-router-native
 - react-router-config: 静态配置辅助库
-
-router 
-
 
 <hr />
 

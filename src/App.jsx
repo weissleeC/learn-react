@@ -14,7 +14,8 @@ import './style/index.css'
 // import HookUseState from './HookUseState';
 // import HookUseEffect from './HookUseEffect';
 // import HookUseRef from './HookUseRef';
-import ECSMScript from './ECSMScript';
+// import ECSMScript from './ECSMScript';
+// import FileUpload from './FileUpload';
 
 export default function App(){
   return(
@@ -24,8 +25,7 @@ export default function App(){
       <button type="button" onClick={ ()=>this.setState({ isRenderLifeCycle: !this.state.isRenderLifeCycle }) }>LifeCycle 渲染控制</button>
       <hr/> */}
       {/* <ReduxDOM /> */}
-
-      <ECSMScript />
+      
     </Fragment>
   )
 }
