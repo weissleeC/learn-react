@@ -26,6 +26,8 @@ export default function App(){
       <hr/> */}
       {/* <ReduxDOM /> */}
       
+
+      <RouterDom />
     </Fragment>
   )
 }
