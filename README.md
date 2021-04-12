@@ -226,6 +226,7 @@ class Child extends React.Component{
     + 可独立使用，但大部分时间都是和 react 一起使用。
     + 单向数据流，简单，易于调试。
 
+
 ### 十二、React-router
 reuter 的作用：通过不同的地址，展示不同组件，简单化页面应用的编写
 
