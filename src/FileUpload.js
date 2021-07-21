@@ -1,13 +1,9 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from "react";
 
 function FileUpload() {
-  useEffect(() => {
-    
-  })
+  useEffect(() => {});
 
-  return (
-    <input type="file" />
-  );
-};
+  return <input type="file" />;
+}
 
 export default FileUpload;

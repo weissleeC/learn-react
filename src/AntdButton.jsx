@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { Button } from 'antd';
+import { Button } from "antd";
 
 /**
  * antd 按需加载
@@ -8,9 +8,7 @@ import { Button } from 'antd';
  */
 
 export default class AntdButon extends React.Component {
-    render(){
-        return(
-            <Button type="primary">Primary Button</Button>
-        )
-    }
+  render() {
+    return <Button type="primary">Primary Button</Button>;
+  }
 }

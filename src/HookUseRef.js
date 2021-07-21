@@ -1,20 +1,22 @@
-import React, { useRef } from 'react';
-import { Button, Input } from 'antd';
+import React, { useRef } from "react";
+import { Button, Input } from "antd";
 
-function HookUseRef(){
+function HookUseRef() {
   const inputEl = useRef(null);
 
   return (
     <>
       <Input placeholder="请输入内容" inputEl={inputEl} />
-      <Button 
+      <Button
         type="primary"
         onClick={() => {
           console.log(inputEl.current.focus);
         }}
-      >Button</Button>
+      >
+        Button
+      </Button>
     </>
-  )
-};
+  );
+}
 
 export default HookUseRef;

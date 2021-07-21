@@ -1,5 +1,5 @@
-import React,{ Fragment } from 'react';
-import './style/index.css'
+import React, { Fragment } from "react";
+import "./style/index.css";
 
 // import TodoList from './TodoList';
 // import RefsDOM from './RefsDOM';
@@ -17,17 +17,14 @@ import './style/index.css'
 // import ECSMScript from './ECSMScript';
 // import FileUpload from './FileUpload';
 
-export default function App(){
-  return(
+export default function App() {
+  return (
     <Fragment>
       {/* { this.state.isRenderLifeCycle ? <LifeCycleNew /> : '未渲染' }
       <br/>
       <button type="button" onClick={ ()=>this.setState({ isRenderLifeCycle: !this.state.isRenderLifeCycle }) }>LifeCycle 渲染控制</button>
       <hr/> */}
       {/* <ReduxDOM /> */}
-      
-
-      <RouterDom />
     </Fragment>
-  )
+  );
 }

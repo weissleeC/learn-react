@@ -1,68 +1,82 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState } from "react";
 
-function HookUseState(){
-  const [fruit, setFruit] = useState('🍎');
+function HookUseState() {
+  const [fruit, setFruit] = useState("🍎");
 
   const [count, setCount] = useState(0);
 
-  const [oBj, setObj] = useState({name: 'Tom', sex: '男'});
+  const [oBj, setObj] = useState({ name: "Tom", sex: "男" });
 
   const [arr, setArr] = useState([1, 2, 3]);
 
   const [func, setFunc] = useState(() => {
-    return 'useState 也可以返回一个函数';
+    return "useState 也可以返回一个函数";
   });
 
-  return(
+  return (
     <Fragment>
       <h2>{fruit}</h2>
-      <button 
+      <button
         htmltype="button"
-        onClick={()=>{ setFruit('🍐') }}
-      >换雪梨</button>
+        onClick={() => {
+          setFruit("🍐");
+        }}
+      >
+        换雪梨
+      </button>
 
-      <hr/>
+      <hr />
 
       <h2>{count}</h2>
       <button
         htmltype="button"
-        onClick={()=>{ setCount(count+1) }}
-      >累计</button>
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
+        累计
+      </button>
 
-      <hr/>
+      <hr />
 
       <h2>{oBj.name}</h2>
       <button
         htmltype="button"
-        onClick={() =>{ 
-          setObj({...oBj, name: 'Lee'});
+        onClick={() => {
+          setObj({ ...oBj, name: "Lee" });
         }}
-      >换名字</button>
+      >
+        换名字
+      </button>
 
-      <hr/>
+      <hr />
 
       <h2>{arr}</h2>
       <button
         htmltype="button"
-        onClick={()=>{
+        onClick={() => {
           setArr(() => {
             arr.push(4);
             return [...arr];
-          })
+          });
         }}
-      >数组 push</button>
+      >
+        数组 push
+      </button>
 
-      <hr/>
+      <hr />
 
       <h2>{func}</h2>
       <button
         htmltype="button"
-        onClick={()=>{
+        onClick={() => {
           setFunc(() => {
-            return '改变内容';
-          })
+            return "改变内容";
+          });
         }}
-      >函数形式</button>
+      >
+        函数形式
+      </button>
     </Fragment>
   );
 }

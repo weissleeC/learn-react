@@ -1,6 +1,6 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from "react";
 
-function HookUseEffect(){
+function HookUseEffect() {
   const [count, setCount] = useState(0);
 
   // 初始执行 useEffect 相当于类组件的 componentDidMount
@@ -10,14 +10,20 @@ function HookUseEffect(){
 
     // return 组件卸载(离开)之后执行的内容，相当于类组件的 componentWillUnmount
     return () => {
-      console.log('componentWillUnmount');
-    }
+      console.log("componentWillUnmount");
+    };
   }, []); // 如果第二个参数为 [] 空数据则为不监听所有的 state 变化。如果加上指定变量则为监听当前变量。
 
-  return(
+  return (
     <Fragment>
       <p>{count}</p>
-      <button onClick={() => {setCount(count+1)}}>累计</button>
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
+        累计
+      </button>
     </Fragment>
   );
 }
