@@ -19,11 +19,15 @@ function HookUseState() {
       <button
         htmltype="button"
         onClick={() => {
+          console.log("修改前：", fruit);
           setFruit("🍐");
+          console.log("修改后：", fruit);
         }}
       >
         换雪梨
       </button>
+
+      {console.log("渲染后：", fruit)}
 
       <hr />
 

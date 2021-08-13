@@ -11,7 +11,7 @@ import "./style/index.css";
 // import LifeCycle from './LifeCycle';
 // import LifeCycleNew from './LifeCycleNew'
 // import InfiniteDemo from './InfiniteDemo';
-// import HookUseState from './HookUseState';
+import HookUseState from "./HookUseState";
 // import HookUseEffect from './HookUseEffect';
 // import HookUseRef from './HookUseRef';
 // import ECSMScript from './ECSMScript';
@@ -25,6 +25,8 @@ export default function App() {
       <button type="button" onClick={ ()=>this.setState({ isRenderLifeCycle: !this.state.isRenderLifeCycle }) }>LifeCycle 渲染控制</button>
       <hr/> */}
       {/* <ReduxDOM /> */}
+
+      <HookUseState />
     </Fragment>
   );
 }
