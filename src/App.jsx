@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import "./style/index.css";
 
 // import TodoList from './TodoList';
@@ -11,13 +11,14 @@ import "./style/index.css";
 // import LifeCycle from './LifeCycle';
 // import LifeCycleNew from './LifeCycleNew'
 // import InfiniteDemo from './InfiniteDemo';
-import HookUseState from "./HookUseState";
-// import HookUseEffect from './HookUseEffect';
+// import HookUseState from "./HookUseState";
+import HookUseEffect from "./HookUseEffect";
 // import HookUseRef from './HookUseRef';
 // import ECSMScript from './ECSMScript';
 // import FileUpload from './FileUpload';
 
 export default function App() {
+  const [show, setShow] = useState(true);
   return (
     <Fragment>
       {/* { this.state.isRenderLifeCycle ? <LifeCycleNew /> : '未渲染' }
@@ -25,8 +26,11 @@ export default function App() {
       <button type="button" onClick={ ()=>this.setState({ isRenderLifeCycle: !this.state.isRenderLifeCycle }) }>LifeCycle 渲染控制</button>
       <hr/> */}
       {/* <ReduxDOM /> */}
+      {show ? <HookUseEffect /> : ""}
 
-      <HookUseState />
+      {/* <HookUseEffect /> */}
+
+      <button onClick={() => setShow(false)}>reset</button>
     </Fragment>
   );
 }
