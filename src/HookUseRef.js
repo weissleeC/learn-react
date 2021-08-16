@@ -1,16 +1,21 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Button, Input } from "antd";
 
 function HookUseRef() {
   const inputEl = useRef(null);
 
+  useEffect(() => {
+    //inputEl.current.state.value = "useEffect input";
+  });
+
   return (
     <>
-      <Input placeholder="请输入内容" inputEl={inputEl} />
+      {/* <Input placeholder="请输入内容" ref={inputEl} /> */}
+      <span ref={inputEl}></span>
       <Button
         type="primary"
         onClick={() => {
-          console.log(inputEl.current.focus);
+          inputEl.current.backgroundColor = "red";
         }}
       >
         Button
