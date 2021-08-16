@@ -11,9 +11,9 @@ import "./style/index.css";
 // import LifeCycle from './LifeCycle';
 // import LifeCycleNew from './LifeCycleNew'
 // import InfiniteDemo from './InfiniteDemo';
-import HookUseState from "./HookUseState";
-// import HookUseEffect from './HookUseEffect';
-// import HookUseRef from './HookUseRef';
+// import HookUseState from "./HookUseState";
+// import HookUseEffect from "./HookUseEffect";
+import HookUseRef from "./HookUseRef";
 // import ECSMScript from './ECSMScript';
 // import FileUpload from './FileUpload';
 
@@ -26,7 +26,7 @@ export default function App() {
       <hr/> */}
       {/* <ReduxDOM /> */}
 
-      <HookUseState />
+      <HookUseRef />
     </Fragment>
   );
 }
