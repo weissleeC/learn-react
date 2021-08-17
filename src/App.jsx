@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { Fragment, useEffect, useState } from "react";
+=======
+import React, { Fragment, useState } from "react";
+>>>>>>> ce965c069eedbfbf3ef36821cacefbb6d88db442
 import "./style/index.css";
 
 // import TodoList from './TodoList';
@@ -23,22 +27,15 @@ import Main from "./theme/Main";
 import Footer from "./theme/Footer";
 
 export default function App() {
-  const [theme, setTheme] = useState("light");
-
-  useEffect(() => {
-    let timer = setTimeout(() => {
-      setTheme("dark");
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  });
-
+  const [show, setShow] = useState(true);
   return (
     <Fragment>
       {/* { this.state.isRenderLifeCycle ? <LifeCycleNew /> : '未渲染' }
       <br/>
       <button type="button" onClick={ ()=>this.setState({ isRenderLifeCycle: !this.state.isRenderLifeCycle }) }>LifeCycle 渲染控制</button>
       <hr/> */}
+      {/* <ReduxDOM /> */}
+      {/* {show ? <HookUseEffect /> : ""} */}
 
       <Container theme={theme}>
         <Header>Header</Header>
