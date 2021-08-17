@@ -1,4 +1,9 @@
-hr{
-    margin: 30px 0;
-    border-color: #ddd;
+hr {
+	margin: 30px 0;
+	border-color: #ddd;
+}
+
+.dark {
+	color: #fff;
+	background-color: #101010;
 }
