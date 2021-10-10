@@ -4,7 +4,7 @@ import React from "react";
 export default class LifeCycle extends React.Component {
   constructor(props) {
     super(props);
-    console.log("加载了 constructor()");
+    console.log("加载了constructor()");
 
     this.state = {
       time: new Date(),
