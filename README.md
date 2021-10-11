@@ -17,4 +17,4 @@
 - `src/serviceWorker` PWA ([Progressive Web Apps](https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps))，渐进式 Web 应用
 - `src/App.test.js` 自动化测试文件
 
-[详细文档总结](https://git.code.tencent.com/Lee007/learn-summary/tree/master/React)
+[详细文档总结](https://github.com/weissleeC/learn-summary/tree/master/React)
